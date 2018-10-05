@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+        <div id="canvas-container">
+
+        </div>
+        <h1>Hello</h1>
+        <script src="assets/WebGL.js"></script>
+        <script src="node_modules/three/build/three.js"></script>
+        <script src="assets/GLTFLoader.js"></script>
+		<script>
+            if (WEBGL.isWebGLAvailable()) {
+
+                function toRadians (angle) {
+                    return angle * (Math.PI / 180);
+                }
+
+                var loader = new THREE.GLTFLoader();
+
+                var scene = new THREE.Scene();
+                scene.background = new THREE.Color( 'white' );
+                var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+                scene.add(light)
+                var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+                camera.aspect = window.innerWidth / window.innerHeight;
+
+                var renderer = new THREE.WebGLRenderer();
+                renderer.setPixelRatio(window.devicePixelRatio);
+                renderer.setSize( 400, 300 );
+                renderer.gammaFactor = 2.2;
+                renderer.gammaOutput = true;
+                document.getElementById('canvas-container').appendChild( renderer.domElement );
+
+                var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+                var material = new THREE.MeshBasicMaterial( { color: 0x800000 } );
+                var cube = new THREE.Mesh( geometry, material );
+                //scene.add( cube );
+                
+                var tamu, tamu_super;
+                var n = 0;
+
+                loader.load('assets/tamu.gltf', function(gltf) {
+                    tamu_super = gltf;
+                    tamu = gltf.scene
+                    scene.add(gltf.scene);
+
+                    var translation = 4;
+                    var scale = 25*translation;
+                    tamu.scale.x = scale;
+                    tamu.scale.y = scale;
+                    tamu.scale.z = scale;
+                    tamu.position.x = -0.76*translation;
+                    tamu.position.y = 0.76*translation;
+                    tamu.position.z = 1;
+                    tamu.rotation.x = toRadians(90); // rotate 90 degrees to be viewable from the camera
+                    tamu.overrideMaterial = material;
+
+                    animate();
+                },
+                function(xhr){},
+                function(error){
+                    console.error('An error happened:', error)
+                })
+
+                camera.position.z = 5;
+
+                var animate = function () {
+                    requestAnimationFrame( animate );
+
+                    //tamu.rotation.x += 0.01;
+                    //tamu.rotation.y += 0.01;
+                    //tamu.rotation.z += 0.01;
+                    
+                    // Math.cos is used so that it's "at rest" position stays the same
+                    //console.log(tamu.position)
+
+                    n += 0.02; // Increment is how fast to sway up and down
+
+                    renderer.render( scene, camera );
+                };
+                
+                
+                
+            } else {
+                var warning = WEBGL.getWebGLErrorMessage();
+                document.getElementById('container').appendChild(warning);
+            }
+		</script>
+	</body>
+</html>
