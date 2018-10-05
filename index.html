@@ -1,31 +1,23 @@
 <html>
 	<head>
-        <title>My first three.js app</title>
+        <title>Austin Jackson</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i,900i" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/vendor/custom-bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <style>
-            .model { 
-              animation: spin 10s linear infinite;
-             }
-            
-             @keyframes spin {
-               to {
-                 transform: rotateY(1turn)
-               }
-             }
-            </style>
 	</head>
 	<body>
-        <div class="container hero">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <x-model class="model" src="assets/models/gltf/duck/Duck.gltf"></x-model>
+                    <x-model class="model" src="assets/models/tamu.gltf"></x-model>
                 </div>
-                <div class="col-sm">
-                    <h1>Hello</h1>
+                <div class="col-sm-8 hero-side hero">
+                    <h1 class="title">Hello</h1>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid content-body">
+            <p>The quick brown fox jumped over the lazy dog.</p>
         </div>
         <script src="assets/js/vendor/custom-element-polyfill.min.js"></script>
         <script src="assets/js/vendor/three.min.js"></script>

@@ -360,6 +360,12 @@
       alpha: true
     });
 
+    //Austin's tweaks
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.gammaFactor = 1.7;
+    renderer.gammaOutput = true;
+
+    //Normal code
     renderer.setScissorTest(true);
     renderer.setClearColor(0x000000, 0);
     renderer.autoClear = false;
@@ -461,6 +467,11 @@
           clipWidth,
           clipHeight
         );
+
+        // Austin's tweak
+        child.overrideMaterial = new THREE.MeshBasicMaterial( { color: 0x800000 } );
+        
+        // Normal code
         scene.add(child);
         renderer.render(scene, camera);
         scene.remove(child);

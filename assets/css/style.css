@@ -1,6 +1,6 @@
 body { 
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     color: #323232;
     background-color: #e4e4e4;
 }
@@ -13,6 +13,44 @@ canvas {
     display: inline-block;
 }
 
-.hero h1 {
-    display: inline-block;
+.hero-side {
+    height: 250px; /* 250px because <x-model> is 250px */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.hero h1.title {
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Stolen from Materialize */
+.card-panel {
+    padding: 24px;
+    margin: .5rem 0 1rem;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.model {
+    transform: rotateX(-90deg);
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(-90deg) rotateZ(0deg)
+    }
+    to {
+        transform: rotateX(-90deg) rotateZ(360deg)
+    }
 }
