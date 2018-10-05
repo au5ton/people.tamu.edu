@@ -1,5 +1,7 @@
 <html>
 	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Austin Jackson</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i,900i" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/vendor/custom-bootstrap.min.css">
@@ -7,17 +9,27 @@
 	</head>
 	<body>
         <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
+            <div class="row hero">
+                <div class="col-sm-4 model-side">
                     <x-model class="model" src="assets/models/tamu.gltf"></x-model>
                 </div>
-                <div class="col-sm-8 hero-side hero">
-                    <h1 class="title">Hello</h1>
+                <div class="col-sm-8 text-side ">
+                    <div>
+                            <h1 class="title">Austin Jackson</h1>
+                            <h5 class="subtitle">Engineering / 2021</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid content-body">
-            <p>The quick brown fox jumped over the lazy dog.</p>
+        <hr>
+        <div class="container content-body">
+            <p>Reference:
+                <ul>
+                    <li><a href="https://services.tamu.edu/directory-search/people/48fcd631df822cdfdd75c349b214d3dc/">TAMU Directory</a></li>
+                    <li><a href="https://austinj.net">Personal website</a></li>
+                    <li><a href="https://github.com/au5ton/people.tamu.edu">Source code</a></li>
+                </ul>
+            </p>
         </div>
         <script src="assets/js/vendor/custom-element-polyfill.min.js"></script>
         <script src="assets/js/vendor/three.min.js"></script>
