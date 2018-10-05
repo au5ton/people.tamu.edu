@@ -1,0 +1,18 @@
+body { 
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #323232;
+    background-color: #e4e4e4;
+}
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#canvas-container, .section {
+    display: inline-block;
+}
+
+.hero h1 {
+    display: inline-block;
+}
