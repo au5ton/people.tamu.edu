@@ -69,3 +69,7 @@ hr {
         transform: rotateX(-90deg) rotateZ(360deg)
     }
 }
+
+abbr {
+    text-decoration: none;
+}
