@@ -73,3 +73,13 @@ hr {
 abbr {
     text-decoration: none;
 }
+
+.content-body .smalldate {
+    color: #525252;
+    line-height: 1.42857143;
+    font-size: 0.7em;
+    font-style: italic;
+    position: relative;
+    bottom: 2px;
+    left: 3px;
+}
